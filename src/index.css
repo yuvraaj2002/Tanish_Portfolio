@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.section-padding {
+  @apply py-24 md:py-32;
+}
+
+.timeline-line {
+  @apply absolute left-5 top-0 h-full w-[1px] bg-default-200;
+}
+
+.timeline-dot {
+  @apply absolute left-5 top-6 h-3 w-3 -translate-x-[5px] rounded-full bg-primary;
+}
+
+.timeline-dot::before {
+  content: '';
+  @apply absolute -left-1 -top-1 h-5 w-5 rounded-full bg-primary/20;
+}
+
+.project-card {
+  @apply transition-all duration-300;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.skill-bar {
+  @apply relative h-2 w-full overflow-hidden rounded-full bg-default-100;
+}
+
+.skill-progress {
+  @apply absolute left-0 top-0 h-full rounded-full bg-primary;
+  transition: width 1s ease-in-out;
+}
+
+.paper-card {
+  @apply transition-all duration-300;
+}
+
+.paper-card:hover {
+  transform: translateY(-3px);
+}
+
+.nav-link {
+  @apply relative px-4 py-2 text-default-600 transition-colors duration-300 hover:text-primary;
+}
+
+.nav-link.active {
+  @apply text-primary;
+}
+
+.nav-link.active::after {
+  content: '';
+  @apply absolute bottom-0 left-0 h-[2px] w-full bg-primary;
+}
